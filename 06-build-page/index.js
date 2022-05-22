@@ -23,11 +23,11 @@ fs.readdir(path.join(__dirname, 'assets'),           //читаем папку a
     (err, files) => {
          if (err) 
             {console.log(err)}
-        else {
-            fs.rm(path.join(__dirname, 'project-dist', 'assets'),
+        else {  
+            fs.rm(path.join(__dirname, 'project-dist', 'assets'), //очищение assets
                 { recursive: true, 
                 force: false}, (err) => {
-                    if (err) {fs.mkdir(path.join(__dirname, 'project-dist', 'assets'),  // создание assets в project-dist
+                    if (err) { fs.mkdir(path.join(__dirname, 'project-dist', 'assets'),  
                     { recursive: true }, () => {
                         console.log('папка assets создана');
                     });}
@@ -79,7 +79,7 @@ fs.readdir(path.join(__dirname, 'styles'),          // чтение и копи�
                 filesFilter.forEach(file => {
                     const readStyle = fs.createReadStream(path.join(__dirname,'styles', file.name),'utf-8');
                     readStyle.on('data', data => {
-                        outputCSS.write(data+'\n')
+                        outputCSS.write(data+'\n'+'\n')
                  });
                    
             })
