@@ -1,5 +1,4 @@
 const fs = require('fs');
-const fsPromises = require('fs/promises');
 const path = require('path');
 
 const output = fs.createWriteStream(path.join(__dirname,'project-dist','bundle.css'));

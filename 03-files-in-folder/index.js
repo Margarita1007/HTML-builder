@@ -1,5 +1,4 @@
 const fs = require('fs');
-const fsPromises = require('fs/promises');
 const path = require('path');
 
 
@@ -16,7 +15,6 @@ fs.readdir(path.join(__dirname,'secret-folder'),
         fs.stat(path.join(__dirname,'secret-folder',notes), (err, stats) => {
             if (err) {
               console.error(err)
-              return
             }
             const nameFile = path.basename(notes, path.extname(notes));
             const extnameFile = path.extname(notes).slice(1);
